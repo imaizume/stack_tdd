@@ -10,5 +10,9 @@ class Stack
   def top
     @value
   end
+
+  def size
+  	0
+  end
 end
 
