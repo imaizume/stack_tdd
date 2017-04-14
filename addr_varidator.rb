@@ -1,5 +1,5 @@
 module AddrVaridator
   def split(s)
-    s.split("@")
+    s.split("@", 2)
   end
 end
