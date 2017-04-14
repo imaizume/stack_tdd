@@ -7,3 +7,4 @@ describe Stack do
     it { expect(stack.isEmpty).to be true }
   end
 end
+
