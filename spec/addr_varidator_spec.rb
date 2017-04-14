@@ -12,6 +12,9 @@ describe AddrVaridator do
 
   context "#include_ng_char?" do
     context '正しい入力の場合' do
+      %w(! # $ % & ' * + - / = ? ^ _ ` { } | ~).each do |char|
+        it { expect(include_ng_char?("a#{char}c")).to be true }
+      end
       it { expect(include_ng_char?('abc')).to be true }
     end
 
