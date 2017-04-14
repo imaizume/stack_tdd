@@ -28,5 +28,15 @@ describe Stack do
       expect(stack.size).to eq 2
     end
   end
+
+  context "#pop" do
+    it do
+      begin
+        stack.pop
+        fail "Fail Stack#pop"
+      rescue
+      end
+    end
+  end
 end
 
