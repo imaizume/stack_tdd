@@ -21,6 +21,8 @@ class Stack
   end
 
   def pop
+    raise EmptyStackException
   end
 end
 
+class EmptyStackException < Exception; end
