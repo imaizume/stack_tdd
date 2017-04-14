@@ -37,6 +37,12 @@ describe Stack do
       rescue EmptyStackException => e
       end
     end
+
+    it do
+      stack.push(1)
+      stack.pop
+      expect(stack.size).to eq 0
+    end
   end
 end
 
