@@ -54,5 +54,19 @@ describe AddrVaridator do
       it { expect(include_zenkaku?('あいうえお')).to be false }
     end
   end
+
+  context "#quoted_string" do
+    context "given correct args" do
+      it { expect(quoted_pair?("\\\t")).to be true }
+      it { expect(quoted_pair?("\\'")).to be true }
+      it { expect(quoted_pair?("\\|")).to be true }
+    end
+
+    context "given wrong args" do
+      it { expect(quoted_pair?("\\")).to be false }
+      it { expect(quoted_pair?("\\ ")).to be false }
+      it { expect(quoted_pair?("\\'!")).to be false }
+    end
+  end
 end
 
