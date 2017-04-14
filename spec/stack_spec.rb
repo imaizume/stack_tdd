@@ -43,6 +43,14 @@ describe Stack do
       stack.pop
       expect(stack.size).to eq 0
     end
+
+    it do
+      stack.push(1)
+      stack.push(2)
+      expect(stack.size).to eq 2
+      stack.pop
+      expect(stack.top).to eq 1
+    end
   end
 end
 

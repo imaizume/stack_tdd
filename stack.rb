@@ -1,6 +1,7 @@
 class Stack
   def initialize
     @size = 0
+    @value = []
   end
 
   def isEmpty
@@ -8,13 +9,13 @@ class Stack
   end
 
   def push(value)
-    @value = value
+    @value << value
     @size += 1
   end
 
   def top
     emptyCheck
-    @value
+    @value[@size - 1]
   end
 
   def size
