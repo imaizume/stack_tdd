@@ -3,11 +3,12 @@ class Stack
     true
   end
 
-  def push(num)
+  def push(value)
+  	@value = value
   end
 
   def top
-    1
+    @value
   end
 end
 
