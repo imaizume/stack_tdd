@@ -20,6 +20,8 @@ describe AddrVaridator do
 
       [
         'abc',
+        'ab.cd',
+        'ab.cd.ef',
       ].each do |str|
         it "#{str}" do
           expect(include_ng_char?(str)).to be true
@@ -28,7 +30,7 @@ describe AddrVaridator do
     end
 
     context '間違った入力の場合' do
-      %w(( ) < > [ ] : ; @ \ , . ").each do |char|
+      %w(( ) < > [ ] : ; @ \ , ").each do |char|
         it "#{char}" do
           expect(include_ng_char?("a#{char}c")).to be false
         end
@@ -36,6 +38,9 @@ describe AddrVaridator do
 
       [
         'a c',
+        '.ab',
+        'ab.',
+        'ab..cd',
       ].each do |str|
         it "#{str}" do
           expect(include_ng_char?(str)).to be false

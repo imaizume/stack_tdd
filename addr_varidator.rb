@@ -4,7 +4,8 @@ module AddrVaridator
   end
 
   def include_ng_char?(str)
-    str.match(Regexp.union(/\(/, /\)/, /</, />/, /\[/, /\]/, /:/, /;/, /@/, /\\/, /,/, /\./, /"/, /\s/)).nil?
+    return false if str.match(Regexp.union(/^\./, /\.$/, /\.\.+/))
+    str.match(Regexp.union(/\(/, /\)/, /</, />/, /\[/, /\]/, /:/, /;/, /@/, /\\/, /,/, /"/, /\s/)).nil?
   end
 
   def include_zenkaku?(str)
