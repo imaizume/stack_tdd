@@ -14,5 +14,12 @@ describe Stack do
       expect(stack.top).to eq 1
     end
   end
+
+  context "#size" do
+    it do
+      stack.push 1
+      expect(stack.size).to eq 1
+    end
+  end
 end
 
