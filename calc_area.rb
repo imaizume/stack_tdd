@@ -2,6 +2,6 @@ require './calc'
 
 while line = STDIN.gets
   value = line.chomp.to_f
-  p value
+  p Calc.raw_area(value)
 end
 
