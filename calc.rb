@@ -1,6 +1,6 @@
 module Calc
   def raw_area(r)
-    (r ** 2) * 3 # Math::PI
+    round( (r ** 2) * Math::PI )
   end
 
   def round(v)

@@ -5,8 +5,11 @@ describe Calc do
   include Calc
 
   context "#raw_area" do
-    it { expect(raw_area(10)).to be 300 }
-    it { expect(raw_area(100)).to be 30000 }
+    it { expect(raw_area(10)).to be 314 }
+    it { expect(raw_area(250)).to be 196350 }
+    it { expect(raw_area(100)).to be 31416 }
+    it { expect(raw_area(1.5)).to be 7 }
+    it { expect(raw_area(-0.0)).to be 0 }
   end
 
   context "#round" do
