@@ -32,9 +32,9 @@ describe Stack do
   context "#pop" do
     it do
       begin
-        stack.pop
-        fail "Fail Stack#pop"
-      rescue
+        stack.top
+        fail
+      rescue EmptyStackException => e
       end
     end
   end
