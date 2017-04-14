@@ -1,6 +1,6 @@
 class Stack
   def isEmpty
-    true
+    @size == 0
   end
 
   def push(value)

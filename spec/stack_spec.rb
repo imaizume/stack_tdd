@@ -5,7 +5,11 @@ describe Stack do
   let(:stack) { Stack.new }
 
   context "#isEmpty" do
-    it { expect(stack.isEmpty).to be true }
+    it do
+      stack.push(1)
+      expect(stack.isEmpty).to be false
+      expect(stack.top).to eq 1
+    end
   end
 
   context "#push" do
