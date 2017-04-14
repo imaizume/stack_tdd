@@ -4,8 +4,8 @@ require "./addr_varidator"
 describe AddrVaridator do
   include AddrVaridator
 
-  context "#hoge" do
-    it { expect(1).to be 1 }
+  context "#split" do
+    it { expect(split("a@b")).to eq %w(a b) }
   end
 end
 
