@@ -62,7 +62,7 @@ describe AddrVaridator do
     end
   end
 
-  context "#quoted_string" do
+  context "#quoted_pair?" do
     context "given correct args" do
       it { expect(quoted_pair?("\\\t")).to be true }
       it { expect(quoted_pair?("\\'")).to be true }
@@ -73,6 +73,28 @@ describe AddrVaridator do
       it { expect(quoted_pair?("\\")).to be false }
       it { expect(quoted_pair?("\\ ")).to be false }
       it { expect(quoted_pair?("\\'!")).to be false }
+    end
+  end
+
+  context "#qtext?" do
+    context "given correct args" do
+      it { expect(qtext?('!')).to be true }
+      it { expect(qtext?('#')).to be true }
+      it { expect(qtext?('~')).to be true }
+    end
+    context "given wrong args" do
+      it { expect(qtext?('"')).to be false }
+      it { expect(qtext?("\\")).to be false }
+    end
+  end
+
+  context "#quoted_string?" do
+    context "given correct args" do
+      it { expect(qcontent?(%Q|abcd|)).to be true }
+      it { expect(qcontent?(%Q|a.b.c.d|)).to be true }
+    end
+
+    context "given wrong args" do
     end
   end
 end
