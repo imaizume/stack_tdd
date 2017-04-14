@@ -3,6 +3,10 @@ module Calc
     (r ** 2) * 3 # Math::PI
   end
 
-  module_function :raw_area
+  def round(v)
+    v.round
+  end
+
+  module_function :raw_area, :round
 end
 
