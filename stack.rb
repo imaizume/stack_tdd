@@ -4,7 +4,9 @@ class Stack
   end
 
   def push(value)
-  	@value = value
+    @value = value
+    @size ||= 0
+    @size += 1
   end
 
   def top
@@ -12,7 +14,7 @@ class Stack
   end
 
   def size
-  	1
+    @size
   end
 end
 

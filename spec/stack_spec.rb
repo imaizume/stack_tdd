@@ -19,6 +19,8 @@ describe Stack do
     it do
       stack.push 1
       expect(stack.size).to eq 1
+      stack.push 2
+      expect(stack.size).to eq 2
     end
   end
 end
