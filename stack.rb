@@ -23,6 +23,7 @@ class Stack
 
   def pop
     emptyCheck
+    @size -= 1
   end
 
   def emptyCheck
