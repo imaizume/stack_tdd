@@ -16,10 +16,10 @@ describe AddrVaridator do
     end
 
     context '間違った入力の場合' do
-      it { expect(include_ng_char?('a@c')).to be false }
-      it { expect(include_ng_char?('a\c')).to be false }
+      %w(( ) < > [ ] : ; @ \ , . ").each do |char|
+        it { expect(include_ng_char?("a#{char}c")).to be false }
+      end
       it { expect(include_ng_char?('a c')).to be false }
-      it { expect(include_ng_char?('a"c')).to be false }
     end
   end
 
