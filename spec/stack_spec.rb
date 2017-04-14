@@ -6,6 +6,7 @@ describe Stack do
 
   context "#isEmpty" do
     it do
+      expect(stack.isEmpty).to be true
       stack.push(1)
       expect(stack.isEmpty).to be false
       expect(stack.top).to eq 1
