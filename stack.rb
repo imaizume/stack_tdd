@@ -13,6 +13,7 @@ class Stack
   end
 
   def top
+    emptyCheck
     @value
   end
 
@@ -21,7 +22,11 @@ class Stack
   end
 
   def pop
-    raise EmptyStackException
+    emptyCheck
+  end
+
+  def emptyCheck
+    raise EmptyStackException if isEmpty
   end
 end
 
