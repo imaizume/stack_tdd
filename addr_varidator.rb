@@ -1,6 +1,7 @@
 module AddrVaridator
   def valid(email)
     local, domain = split(email)
+    return false if local.nil?
     include_ng_char?(local) && include_zenkaku?(local) && domain == 'example.com'
   end
 
