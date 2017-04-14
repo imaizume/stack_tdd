@@ -15,6 +15,8 @@ describe AddrVaridator do
       %w(! # $ % & ' * + - / = ? ^ _ ` { } | ~).each do |char|
         it "#{char}" do
           expect(include_ng_char?("a#{char}c")).to be true
+          expect(include_ng_char?("#{char}bc")).to be true
+          expect(include_ng_char?("ab#{char}")).to be true
         end
       end
 
